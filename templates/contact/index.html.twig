@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+<link href="{{ asset('css/contact.css') }}" rel="stylesheet"/>
+    <div>
+        {% if auth is defined and auth is not empty %}
+            <h1>
+               Mon contact actuel:
+
+               <li> Id : {{ auth.id }} </li>
+               <li> Nom : {{ auth.nom }} </li>
+               <li> Prénom : {{ auth.prenom }} </li>
+               <li> Âge : {{ auth.age }} </li>
+               {% if auth.newsletter == true %}
+               <li> Newsletter : Ok </li>
+               {% elseif auth.newsletter == false %}
+               <li> Newsletter : Pas ok </li>
+               {% endif %}
+
+              
+
+               
+            </h1>
+        {% endif %}
+
+       
+        <ul>
+        <h1> Liste des contacts en Base de donnée : {{ contact | length }} </h1> 
+            {% for contact in contact %}
+                <li><a href="{{ path('authId', {id:contact.id}) }}">Demande de contact de  {{ contact.nom }}, {{ contact.prenom }} </a></li>
+            {% endfor %}
+        </ul>
+
+        {% if city is defined and city is not empty %}
+            <p>
+                Vous êtes sur la ville de {{ city }}
+            </p>
+        {% endif %}
+        <h1> Ajouter un Contact:</h1>
+        {{ form(form) }}
+    </div>
+
+   
+{% endblock %}

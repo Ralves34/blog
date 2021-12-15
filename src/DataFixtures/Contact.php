@@ -11,10 +11,10 @@ class Contact extends Fixture
     {
 
         $contacts = [
-            new \App\Entity\Contact('Alves', 'Lucas', 'yooo@gmail.com', 'yolo', 'yoplait', false),
-            new \App\Entity\Contact('Kylian', 'Mbappe', 'tortueninja@gmail.com', 'im fast as fuck boi', 'ptet', true),
-            new \App\Entity\Contact('Mé na', 'Mé si', 'mesimenan@gmail.com', 'omg', 'peux vnir stp', true),
-            new \App\Entity\Contact('Elodie', 'costa', 'elodie@gmail.com', 'ouii', 'est ce que elodie mesure 6 ihpones', true)
+            new \App\Entity\Contact('Alves', 'Lucas', 'yooo@gmail.com', '28',  false),
+            new \App\Entity\Contact('Kylian', 'Mbappe', 'tortueninja@gmail.com', '25', true),
+            new \App\Entity\Contact('Mé na', 'Mé si', 'mesimenan@gmail.com', '24', true),
+            new \App\Entity\Contact('Elodie', 'costa', 'elodie@gmail.com', '23', true)
             
         ];
 
